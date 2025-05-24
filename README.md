@@ -27,14 +27,14 @@
 
 
 
-<a href="https://dashboard.heroku.com/new?template=https://github.com/Peacemaker-cyber/Peacemaker-md/tree/main">
-    <img title="DEPLOY PEACEMAKER BOT" src="https://img.shields.io/badge/🚀_DEPLOY_ON_HEROKU-000000?style=for-the-badge&logo=heroku&logoColor=white&color=FF00FF" width="260" height="50"/>
+<a href="https://dashboard.heroku.com/new?template=https://github.com/Peacemaker-cyber/PEACE-MD/new/main">
+    <img title="DEPLOY PEACE MD BOT" src="https://img.shields.io/badge/🚀_DEPLOY_ON_HEROKU-000000?style=for-the-badge&logo=heroku&logoColor=white&color=FF00FF" width="260" height="50"/>
   </a>
 </p>
 
 [![Typing SVG](https://readme-typing-svg.herokuapp.com?font=monospace-ExtraBold&color=blue&lines=𝗙𝗢𝗥𝗞+𝗔𝗡𝗗+𝗦𝗧𝗔𝗥+⭐+𝗥𝗘𝗣𝗢)](https://git.io/typing-svg)
  <p align="center">
- <a href="https://github.com/Peacemaker-cyber/Peacemaker-md/fork"><img title="PEACEMAKER-MD" src="https://img.shields.io/badge/FORK-PEACEMAKER MD V1-h?color=008000&style=for-the-badge&logo=github"></a>
+ <a href="https://github.com/Peacemaker-cyber/Peacemaker-md/fork"><img title="PEACEMAKER-MD" src="https://img.shields.io/badge/FORK-PEACE MD-h?color=008000&style=for-the-badge&logo=github"></a>
 
 
 
