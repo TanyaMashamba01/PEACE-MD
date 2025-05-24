@@ -11,7 +11,7 @@ cmd({
     filename: __filename,
 },
 async (conn, mek, m, { from, reply }) => {
-    const githubRepoURL = 'https://github.com/Peacemaker-cyber/PEACE-MD/new/main';
+    const githubRepoURL = 'https://github.com/Peacemaker-cyber/PEACE-MD';
 
     try {
         const [, username, repoName] = githubRepoURL.match(/github\.com\/([^/]+)\/([^/]+)/);
