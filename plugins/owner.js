@@ -35,7 +35,7 @@ async (conn, mek, m, { from, reply }) => {
 
         // Send owner details with image
         await conn.sendMessage(from, {
-            image: { url: 'https://files.catbox.moe/e6rhto.jpg' },
+            image: { url: 'https://files.catbox.moe/yndl4u.jpg' },
             caption:
 `╭─〔 *OWNER* 〕─╮
 │ 👤 ${ownerName}
@@ -50,7 +50,7 @@ _Only for important queries._`,
                 isForwarded: true,
                 forwardedNewsletterMessageInfo: {
                     newsletterJid: '120363290715861418@newsletter',
-                    newsletterName: 'ᴘᴏᴘᴋɪᴅ xᴍᴅ',
+                    newsletterName: 'PEACE MD',
                     serverMessageId: 143
                 }
             }
