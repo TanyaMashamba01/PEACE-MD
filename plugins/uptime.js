@@ -24,13 +24,13 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
 │ ⏱ *Uptime:* ${runtime(process.uptime())}
 │ 📦 *RAM:* ${usedMem}MB / ${totalMem}MB
 │ 🖥 *Platform:* ${platform}
-│ 👑 *Owner:* popkid
+│ 👑 *Owner:* Peacemaker
 │ 🧪 *Version:* 1.0.0 BETA
 └───────────────⬣`;
 
         // Send image + caption + audio
         await conn.sendMessage(from, { 
-            image: { url: `https://files.catbox.moe/lkmvah.jpg` },  
+            image: { url: `https://files.catbox.moe/yndl4u.jpg` },  
             caption: status,
             contextInfo: {
                 mentionedJid: [m.sender],
@@ -38,7 +38,7 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
                 isForwarded: true,
                 forwardedNewsletterMessageInfo: {
                     newsletterJid: '120363290715861418@newsletter',
-                    newsletterName: '𝐏𝐎𝐏𝐊𝐈𝐃 𝐀𝐋𝐈𝐕𝐄🩷',
+                    newsletterName: 'PEACE MD ALIVE🩷',
                     serverMessageId: 143
                 }
             }
