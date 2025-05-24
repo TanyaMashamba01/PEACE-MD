@@ -5,7 +5,7 @@
 </p>
 
 <h1 align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=25&duration=3000&color=00FF00&background=000000&center=true&vCenter=true&width=600&lines=⚡+PEACEMAKER+MD+BETTER+OPTION;🔥+The+Most+Powerful+WhatsApp+Bot;💻+developed+by+PRINCE+EMMANUEL;🚀+Peace-Maker+Tech+Solutions;🌈+Fast+⚡+Secure+🔒+Reliable+✅" alt="Typing Animation">
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=25&duration=3000&color=00FF00&background=000000&center=true&vCenter=true&width=600&lines=⚡+PEACE+MD+BETTER+OPTION;🔥+The+Most+Powerful+WhatsApp+Bot;💻+developed+by+PRINCE+EMMANUEL;🚀+Peace-Maker+Tech+Solutions;🌈+Fast+⚡+Secure+🔒+Reliable+✅" alt="Typing Animation">
 </h1>
 
 <p align="center">
@@ -61,7 +61,7 @@
 </p>
 
 <h3 align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=20&duration=3000&color=FFFFFF&background=000000&center=true&vCenter=true&width=600&lines=💎+PEACEMAKER+MD+Quality+Edition+by+PRINCE+EMMANUEL;⚡+The+Future+of+WhatsApp+Bots+is+Here" alt="Footer Animation">
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=20&duration=3000&color=FFFFFF&background=000000&center=true&vCenter=true&width=600&lines=💎+PEACE+MD+Quality+Edition+by+PRINCE+EMMANUEL;⚡+The+Future+of+WhatsApp+Bots+is+Here" alt="Footer Animation">
 </h3>
 
 <p align="center">
