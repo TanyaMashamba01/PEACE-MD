@@ -5,8 +5,8 @@ const {runtime} = require('../lib/functions')
 const axios = require('axios')
 
 cmd({
-    pattern: "popkid",
-    alias: ["pop","popsmenu"],use: '.menu',
+    pattern: "peacemd",
+    alias: ["peace","peacemenu"],use: '.menu',
     desc: "menu the bot",
     category: "menu",
     react: "📱",
@@ -22,7 +22,7 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
 ┃ ✨ *Prefix:* ${config.PREFIX}
 ┃ 💾 *RAM:* ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB / ${Math.round(os.totalmem() / 1024 / 1024)}MB
 ┃ 🙍 *User:* ${pushName}
-┃ 👨‍💻 *Developer:* Popkid Tech
+┃ 👨‍💻 *Developer:* Peacemaker Tech
 ┃ 🚀 *Version:* 1.0.0
 ┃
 ╰━━━━━━━━━━━━━━━━━━━━━━━━╯
@@ -125,13 +125,13 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
 │ • .dailyfact
 ╰────────────────────────╯
 
-✨ Powered by *POPKID TECH*
+✨ Powered by *PEACE MD*
 `;
 
         await conn.sendMessage(
             from,
             {
-                image: { url: `https://files.catbox.moe/e6rhto.jpg` },
+                image: { url: `https://files.catbox.moe/yndl4u.jpg` },
                 caption: dec,
                 contextInfo: {
                     mentionedJid: [m.sender],
@@ -139,7 +139,7 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
                     isForwarded: true,
                     forwardedNewsletterMessageInfo: {
                         newsletterJid: '120363290715861418@newsletter',
-                        newsletterName: 'PᴏᴘᴋɪᴅXᴛᴇᴄʜ',
+                        newsletterName: '𝙋𝙀𝘼𝘾𝙀 𝙈𝘿',
                         serverMessageId: 143
                     }
                 }
