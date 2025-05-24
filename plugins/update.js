@@ -16,7 +16,7 @@ cmd({
     if (!isOwner) return reply("This command is only for the bot owner.");
 
     try {
-        await reply("🔍 Checking for POPKID-MD updates...");
+        await reply("🔍 Checking for PEACE-MD updates...");
 
         // Fetch the latest commit hash from GitHub
         const { data: commitData } = await axios.get("https://api.github.com/repos/popkidxtech/ZIPPY-XTECH/commits/main");
@@ -26,10 +26,10 @@ cmd({
         const currentHash = await getCommitHash();
 
         if (latestCommitHash === currentHash) {
-            return reply("✅ Your POPKID-MD bot is already up-to-date!");
+            return reply("✅ Your PEACE-MD bot is already up-to-date!");
         }
 
-        await reply("🚀 Updating POPKID-MD Bot...");
+        await reply("🚀 Updating PEACE-MD Bot...");
 
         // Download the latest code
         const zipPath = path.join(__dirname, "latest.zip");
