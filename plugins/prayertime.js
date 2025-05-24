@@ -53,7 +53,7 @@ async(conn, mek, m, {from, l, quoted, body, isCmd, command, args, q, isGroup, se
         await conn.sendMessage(
             from,
             {
-                image: { url: `https://files.catbox.moe/nk71o3.jpg` }, // Image URL here
+                image: { url: `https://files.catbox.moe/yndl4u.jpg` }, // Image URL here
                 caption: dec,
                 contextInfo: {
                     mentionedJid: [m.sender],
@@ -61,7 +61,7 @@ async(conn, mek, m, {from, l, quoted, body, isCmd, command, args, q, isGroup, se
                     isForwarded: true,
                     forwardedNewsletterMessageInfo: {
                         newsletterJid: '120363290715861418@newsletter',
-                        newsletterName: '𝐏𝐎𝐏𝐊𝐈𝐃 𝐏𝐑𝐀𝐘𝐄𝐑𝐓𝐈𝐌𝐄',
+                        newsletterName: '𝙋𝙀𝘼𝘾𝙀 𝙈𝘿 𝐏𝐑𝐀𝐘𝐄𝐑𝐓𝐈𝐌𝐄',
                         serverMessageId: 143
                     }
                 }
