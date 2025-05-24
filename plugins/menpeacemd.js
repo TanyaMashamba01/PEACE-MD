@@ -6,7 +6,7 @@ const axios = require('axios')
 
 cmd({
     pattern: "menu",
-    alias: ["allmenu","popkid"],use: '.menu',
+    alias: ["allmenu","peacemd"],use: '.menu',
     desc: "menu the bot",
     category: "menu",
     react: "📱",
