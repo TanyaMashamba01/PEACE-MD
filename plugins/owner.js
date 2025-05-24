@@ -41,7 +41,7 @@ async (conn, mek, m, { from, reply }) => {
 │ 👤 ${ownerName}
 │ ☎️ ${ownerNumber}
 │ ⚙️ v2.0.0 Beta
-│ 🧠 POPKID XMD
+│ 🧠 PEACE MD
 ╰──────────────╯
 _Only for important queries._`,
             contextInfo: {
