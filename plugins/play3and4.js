@@ -26,7 +26,7 @@ cmd({
       return reply("*Please provide a song name or keywords to search for.*");
     }
 
-    reply("*POPKID-MD 🤖 SEARCHING FOR QUERY*");
+    reply("*𝙋𝙀𝘼𝘾𝙀-𝙈𝘿 🤖 SEARCHING FOR QUERY*");
 
     // Search for videos on YouTube
     const searchResults = await yts(searchQuery);
@@ -91,7 +91,7 @@ cmd({
       return reply("*Please provide a song name or keywords to search for.*");
     }
 
-    reply(" *POPKID 1.2.0 🐞 SEARCHING FOR QUERY* ");
+    reply(" *𝙋𝙀𝘼𝘾𝙀 𝙈𝘿 1.2.0 🐞 SEARCHING FOR QUERY* ");
 
     const searchResults = await yts(searchQuery);
     if (!searchResults.videos || searchResults.videos.length === 0) {
