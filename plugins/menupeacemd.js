@@ -21,10 +21,10 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
 │🕹️ *ᴍᴏᴅᴇ:* *${config.MODE}*
 │🎯 *ᴘʀᴇғɪx:* *${config.PREFIX}*
 │💡 *ʀᴀᴍ ᴜsᴇ:* ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} GB / ${Math.round(require('os').totalmem / 1024 / 1024)} GB
-│👑 *ᴅᴇᴠ:* *ᴘᴏᴘᴋɪᴅ ᴛᴇᴄʜ*
+│👑 *ᴅᴇᴠ:* *PEACE MD*
 │🚀 *ᴠᴇʀsɪᴏɴ:* *1.0.0*
 ╰–––––––––––––––––––––––––––––––––––––
-> ©𝗱𝗲𝘃 𝗽𝗼𝗽𝗸𝗶𝗱🎮
+> ©𝗱𝗲𝘃 PEACEMAKER🎮
 
 ---
 📚 *DOWNLOAD COMMANDS*
@@ -243,7 +243,7 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
 * 🌐 .define
 * 🌐 .dailyfact
 
-> ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴘᴏᴘᴋɪᴅ🎲`;
+> ᴘᴏᴡᴇʀᴇᴅ ʙʏ PEACE MD🎲`;
 
         await conn.sendMessage(
             from,
