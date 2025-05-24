@@ -28,13 +28,13 @@ const wordInfo = `
 📝 *Example*: ${example}
 🔗 *Synonyms*: ${synonyms}
 
-> *@ 💎 popkid 💎*`;
+> *@ 💎 Peace md 💎*`;
 
                                  return reply(wordInfo);
                              } catch (e) {
                                  console.log(e);
                                  if (e.response && e.response.status === 404) {
-                                     return reply("🚫💎 popkid-xᴍᴅ 💎 Word not found. Please check the spelling and try again.");
+                                     return reply("🚫💎 𝙋𝙀𝘼𝘾𝙀 𝙈𝘿 💎 Word not found. Please check the spelling and try again.");
                                  }
                                  return reply("⚠️ An error occurred while fetching the definition. Please try again later.");
                              }
