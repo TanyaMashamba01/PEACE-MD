@@ -20,7 +20,7 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
         const usedMem = (process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2); // Used RAM in MB
 
         // Compact and attractive system status message
-        const status = `┌─〔 *🧊 ᴘᴏᴘᴋɪᴅ xᴛᴇᴄʜ 🚀* 〕─⬣
+        const status = `┌─〔 *🧊 PEACE MD 🚀* 〕─⬣
 │ ⏱ *Uptime:* ${runtime(process.uptime())}
 │ 📦 *RAM:* ${usedMem}MB / ${totalMem}MB
 │ 🖥 *Platform:* ${platform}
