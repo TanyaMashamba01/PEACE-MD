@@ -33,38 +33,3 @@ async (conn, mek, m, { from, reply }) => {
             }
         });
 
-        // Send owner details with image
-        await conn.sendMessage(from, {
-            image: { url: 'https://files.catbox.moe/yndl4u.jpg' },
-            caption:
-`╭─〔 *OWNER* 〕─╮
-│ 👤 ${ownerName}
-│ ☎️ ${ownerNumber}
-│ ⚙️ v2.0.0 Beta
-│ 🧠 PEACE MD
-╰──────────────╯
-_Only for important queries._`,
-            contextInfo: {
-                mentionedJid: [`${ownerNumber.replace('+', '')}@s.whatsapp.net`],
-                forwardingScore: 999,
-                isForwarded: true,
-                forwardedNewsletterMessageInfo: {
-                    newsletterJid: '120363290715861418@newsletter',
-                    newsletterName: 'PEACE MD',
-                    serverMessageId: 143
-                }
-            }
-        }, { quoted: mek });
-
-        // Send voice message
-        await conn.sendMessage(from, {
-            audio: { url: 'https://files.catbox.moe/x9g2rd.m4a' },
-            mimetype: 'audio/mp4',
-            ptt: true
-        }, { quoted: mek });
-
-    } catch (error) {
-        console.error(error);
-        reply(`An error occurred: ${error.message}`);
-    }
-});
