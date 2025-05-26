@@ -179,7 +179,7 @@ ${repoData.description || 'No description provided'}
                 forwardingScore: 999,
                 isForwarded: true,
                 forwardedNewsletterMessageInfo: {
-                    newsletterJid: '120363290715861418@newsletter',
+                    newsletterJid: '@newsletter',
                     newsletterName: config.OWNER_NAME || 'Peace md',
                     serverMessageId: 143
                 }
@@ -188,7 +188,7 @@ ${repoData.description || 'No description provided'}
 
         // Send audio
         await conn.sendMessage(from, {
-            audio: { url: 'https://files.catbox.moe/10rp3b.m4a' },
+            audio: { url: 'https://files.catbox.moe/09ku2f.mp3' },
             mimetype: 'audio/mp4',
             ptt: true,
             contextInfo: { 
