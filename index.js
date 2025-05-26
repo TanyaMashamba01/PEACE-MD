@@ -267,7 +267,7 @@ const port = process.env.PORT || 9090;
  //================ownerreact==============
     
 if (senderNumber.includes("254769876178") && !isReact) {
-  const reactions = ["💚",];
+  const reactions = ["💚"];
   const randomReaction = reactions[Math.floor(Math.random() * reactions.length)];
   m.react(randomReaction);
 }
@@ -276,9 +276,7 @@ if (senderNumber.includes("254769876178") && !isReact) {
   
 // Auto React for all messages (public and owner)
 if (!isReact && config.AUTO_REACT === 'false') {
-    const reactions = [
-        '💚'] 
-    ];
+    const reactions = ['💚'];
 
     const randomReaction = reactions[Math.floor(Math.random() * reactions.length)];
     m.react(randomReaction);
