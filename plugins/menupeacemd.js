@@ -125,7 +125,7 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
 * ⚙️ .gjid
 * ⚙️ .pair
 * ⚙️ .save
-* ⚙️ .popkid
+* ⚙️ .peacemd
 * ⚙️ .restart
 
 ---
@@ -186,6 +186,7 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
 * ⚙️ .autoreact
 * ⚙️ .antilink
 * ⚙️ .autoread
+* ⚙️ .save status 
 
 ---
 🔄 *CONVERTER COMMANDS*
@@ -255,7 +256,7 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
                     forwardingScore: 999,
                     isForwarded: true,
                     forwardedNewsletterMessageInfo: {
-                        newsletterJid: '120363290715861418@newsletter',
+                        newsletterJid: '@newsletter',
                         newsletterName: 'PEACE MD',
                         serverMessageId: 143
                     }
