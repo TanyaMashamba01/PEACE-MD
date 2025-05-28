@@ -267,7 +267,7 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
 
         // Send audio
         await conn.sendMessage(from, {
-            audio: { url: 'https://files.catbox.moe/kxdej4.m4a' },
+            audio: { url: 'https://files.catbox.moe/mq0ekb.mp3' },
             mimetype: 'audio/mp4',
             ptt: true
         }, { quoted: mek });
