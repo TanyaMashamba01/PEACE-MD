@@ -25,19 +25,21 @@ async (conn, mek, m, { from, reply }) => {
             'END:VCARD'
         ].join('\n');
 
-        // Send vCard contact
+        // Attempt to fetch the profile picture of the owner
+        let profilePicUrl;
+        try {
+            profilePicUrl = await conn.profilePictureUrl(`${ownerNumber.replace('+', '')}@s.whatsapp.net`, 'image');
+        } catch (err) {
+            // fallback to a default image if profile picture is not available
+            profilePicUrl = 'https://telegra.ph/file/265c672094dfa87caea19.jpg';
+        }
+
+        // Send the contact card (shows "Message / Add Contact")
         await conn.sendMessage(from, {
             contacts: {
                 displayName: ownerName,
                 contacts: [{ vcard }]
             }
-        });
-
-        // Send voice message
-        await conn.sendMessage(from, {
-            audio: { url: 'https://files.catbox.moe/x9g2rd.m4a' },
-            mimetype: 'audio/mp4',
-            ptt: true
         }, { quoted: mek });
 
     } catch (error) {
