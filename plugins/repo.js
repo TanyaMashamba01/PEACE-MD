@@ -179,7 +179,7 @@ ${repoData.description || 'No description provided'}
                 forwardingScore: 999,
                 isForwarded: true,
                 forwardedNewsletterMessageInfo: {
-                    newsletterJid: '@newsletter',
+                    newsletterJid: '120363421564278292@newsletter',
                     newsletterName: config.OWNER_NAME || 'Peace md',
                     serverMessageId: 143
                 }
