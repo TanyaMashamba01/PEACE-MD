@@ -41,7 +41,7 @@ cmd({
 ┇๏ *Title* - ${title}
 ┇๏ *Media Type* - ${media[0].type}
 ╰━━❑━⪼
-> *© Pᴏᴡᴇʀᴇᴅ Bʏ Pᴏᴘᴋɪᴅ-Aɪ ♡*`;
+> *© Pᴏᴡᴇʀᴇᴅ Bʏ 𝙋𝙀𝘼𝘾𝙀𝙈𝘼𝙆𝙀𝙍💚*`;
 
         // Send the media (video or image) to the user
         if (videoUrl) {
