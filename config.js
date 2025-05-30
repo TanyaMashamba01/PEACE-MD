@@ -23,7 +23,7 @@ ANTI_LINK: process.env.ANTI_LINK || "true",
 // make anti link true,false for groups 
 MENTION_REPLY: process.env.MENTION_REPLY || "false",
 // make true if want auto voice reply if someone menetion you 
-MENU_IMAGE_URL: process.env.MENU_IMAGE_URL || "https://files.catbox.moe/degy3b.jpg",
+MENU_IMAGE_URL: process.env.MENU_IMAGE_URL || "https://files.catbox.moe/n0dgjr.jpg",
 // add custom menu and mention reply image url
 PREFIX: process.env.PREFIX || ".",
 // add your prifix for bot   
@@ -43,7 +43,7 @@ OWNER_NAME: process.env.OWNER_NAME || "𝙋𝙀𝘼𝘾𝙀𝙈𝘼𝙆𝙀𝙍�
 // add bot owner name
 DESCRIPTION: process.env.DESCRIPTION || "*© powered by Peace md*",
 // add bot owner name    
-ALIVE_IMG: process.env.ALIVE_IMG || "https://files.catbox.moe/yndl4u.jpg",
+ALIVE_IMG: process.env.ALIVE_IMG || "https://files.catbox.moe/n0dgjr.jpg",
 // add img for alive msg
 LIVE_MSG: process.env.LIVE_MSG || "> AM ACTIVE *PEACE-MD*⚡",
 // add alive msg here 
