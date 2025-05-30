@@ -3,26 +3,47 @@ const config = require('../config');
 
 cmd({
     pattern: "owner",
-    react: "🔥", 
-    desc: "Get owner number",
+    react: "✅",
+    desc: "Displays bot owner's contact info",
     category: "main",
     filename: __filename
-}, 
-async (conn, mek, m, { from }) => {
+},
+async (conn, mek, m, { from, reply }) => {
     try {
-        const ownerNumber = config.OWNER_NUMBER; // Fetch owner number from config
-        const ownerName = config.OWNER_NAME;     // Fetch owner name from config
+        const ownerNumber = config.OWNER_NUMBER;
+        const ownerName = config.OWNER_NAME;
 
-        const vcard = 'BEGIN:VCARD\n' +
-                      'VERSION:3.0\n' +
-                      `FN:${ownerName}\n` +  
-                      `TEL;type=CELL;type=VOICE;waid=${ownerNumber.replace('+', '')}:${ownerNumber}\n` + 
-                      'END:VCARD';
+        if (!ownerNumber || !ownerName) {
+            return reply("Owner details are missing in config file.");
+        }
 
-        // Send the vCard
-        const sentVCard = await conn.sendMessage(from, {
+        const vcard = [
+            'BEGIN:VCARD',
+            'VERSION:3.0',
+            `FN:${ownerName}`,
+            `TEL;type=CELL;type=VOICE;waid=${ownerNumber.replace('+', '')}:${ownerNumber}`,
+            'END:VCARD'
+        ].join('\n');
+
+        // Attempt to fetch the profile picture of the owner
+        let profilePicUrl;
+        try {
+            profilePicUrl = await conn.profilePictureUrl(`${ownerNumber.replace('+', '')}@s.whatsapp.net`, 'image');
+        } catch (err) {
+            // fallback to a default image if profile picture is not available
+            profilePicUrl = 'https://telegra.ph/file/265c672094dfa87caea19.jpg';
+        }
+
+        // Send the contact card (shows "Message / Add Contact")
+        await conn.sendMessage(from, {
             contacts: {
                 displayName: ownerName,
                 contacts: [{ vcard }]
             }
-        });
+        }, { quoted: mek });
+
+    } catch (error) {
+        console.error(error);
+        reply(`An error occurred: ${error.message}`);
+    }
+});
