@@ -132,7 +132,7 @@ const port = process.env.PORT || 9090;
 ┃ 𝙋𝙀𝘼𝘾𝙀𝙈𝘼𝙆𝙀𝙍
 ┃+254769876178
 ╰══════════════⊷`;
-    conn.sendMessage(conn.user.id, { image: { url: `https://files.catbox.moe/yndl4u.jpg` }, caption: up })
+    conn.sendMessage(conn.user.id, { image: { url: `https://files.catbox.moe/n0dgjr.jpg` }, caption: up })
   }
   })
   conn.ev.on('creds.update', saveCreds)
