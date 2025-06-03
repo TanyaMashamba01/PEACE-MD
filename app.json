@@ -141,7 +141,7 @@
     },
     
     "AUTO_RECORDING": {
-      "description": "Make it true if you want auto recoding.",
+      "description": "Make it true if you want auto recording.",
       "required": false,
       "value": "false"
     },
