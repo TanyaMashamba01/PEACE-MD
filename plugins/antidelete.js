@@ -117,3 +117,27 @@ async (conn, mek, m, { from, reply }) => {
 
         // If there is no quoted message or it's not a ViewOnce message
         if (!m.quoted) return reply("⚠️ Please reply to a ViewOnce message.");
+
+        if (m.quoted.mtype === "viewOnceMessage") {
+            if (m.quoted.message.imageMessage) {
+                let caption = m.quoted.message.imageMessage.caption;
+                let media = await conn.downloadAndSaveMediaMessage(m.quoted.message.imageMessage);
+                return conn.sendMessage(from, { image: { url: media }, caption }, { quoted: mek });
+            } else if (m.quoted.message.videoMessage) {
+                let caption = m.quoted.message.videoMessage.caption;
+                let media = await conn.downloadAndSaveMediaMessage(m.quoted.message.videoMessage);
+                return conn.sendMessage(from, { video: { url: media }, caption }, { quoted: mek });
+            } else if (m.quoted.message.audioMessage) {
+                let media = await conn.downloadAndSaveMediaMessage(m.quoted.message.audioMessage);
+                return conn.sendMessage(from, { audio: { url: media } }, { quoted: mek });
+            }
+        } else {
+            return reply("❌ This is not a valid ViewOnce message.");
+        }
+    } catch (e) {
+        console.log("⚠️ Error in vv3:", e);
+        reply("❌ An error occurred while fetching the ViewOnce message.");
+    }
+});
+
+// Credit: YourName | GitHub: github.com/YourHandle
