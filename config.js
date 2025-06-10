@@ -43,7 +43,4 @@ module.exports = {
     ANTI_VV: process.env.ANTI_VV || "true",
     ANTI_DEL_PATH: process.env.ANTI_DEL_PATH || "log",
     AUTO_RECORDING: process.env.AUTO_RECORDING || "false",
-
-    // ✅ New config field for time zone handling
-    TIME_ZONE: process.env.TIME_ZONE || "Africa/Nairobi"
 };
