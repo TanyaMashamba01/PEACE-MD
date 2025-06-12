@@ -1,14 +1,14 @@
-//Black-Tappy config.js
+//ᴘᴇᴀᴄᴇ ᴍᴅ config.js
 const fs = require("fs");
 require("dotenv").config();
 
 const config = {
-  SESSION_ID: process.env.SESSION_ID || "XTREME~z0wdHks8",
+  SESSION_ID: process.env.SESSION_ID || "",
   PREFIX: process.env.PREFIX || '.',
   BOT_NAME: process.env.BOT_NAME || "PEACE-MD",
   BOT: process.env.BOT || "hello 👋",
-  NEW_CMD: process.env.NEW_CMD || "ᴀᴅᴅᴠᴀʀ\n│ sᴜᴅᴏ\n| bright",
-  CAPTION: process.env.CAPTION || "ᴘᴏᴡᴇʀᴇᴅ ʙʏ PEACEMAKER",
+  NEW_CMD: process.env.NEW_CMD || "ᴀᴅᴅᴠᴀʀ\n│ sᴜᴅᴏ\n| peace",
+  CAPTION: process.env.CAPTION || "ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴘᴇᴀᴄᴇ ᴍᴅ",
   AUTO_STATUS_SEEN: process.env.AUTO_STATUS_SEEN !== undefined ? process.env.AUTO_STATUS_SEEN === 'true' : true,
   AUTO_BIO: process.env.AUTO_BIO !== undefined ? process.env.AUTO_BIO === 'true' : true,
   AUTO_STATUS_REACT: process.env.AUTO_STATUS_REACT !== undefined ? process.env.AUTO_STATUS_REACT === 'true' : true,
@@ -32,17 +32,17 @@ const config = {
   REJECT_CALL: process.env.REJECT_CALL !== undefined ? process.env.REJECT_CALL === 'true' : false, 
   NOT_ALLOW: process.env.NOT_ALLOW !== undefined ? process.env.NOT_ALLOW === 'true' : true,
   MODE: process.env.MODE || "public",
-  DELETED_MESSAGES_CHAT_ID: process.env.DELETED_MESSAGES_CHAT_ID || "254752818245@s.whatsapp.net",
-  OWNER_NAME: process.env.OWNER_NAME || "PEACEMAKER",
-  OWNER_NUMBER: process.env.OWNER_NUMBER || "254752818245 ",
-  SUDO_NUMBER: process.env.SUDO_NUMBER || "254752818245 ",
+  DELETED_MESSAGES_CHAT_ID: process.env.DELETED_MESSAGES_CHAT_ID || "254759000340@s.whatsapp.net",
+  OWNER_NAME: process.env.OWNER_NAME || "❁ ════ ❃• Peacemaker •❃ ═",
+  OWNER_NUMBER: process.env.OWNER_NUMBER || "254752818245",
+  SUDO_NUMBER: process.env.SUDO_NUMBER || "254752818245",
   GEMINI_KEY: process.env.GEMINI_KEY || "AIzaSyCUPaxfIdZawsKZKqCqJcC-GWiQPCXKTDc",
   WELCOME: process.env.WELCOME !== undefined ? process.env.WELCOME === 'true' : false,
 
   // New additions for status command
   STATUS: process.env.STATUS !== undefined ? process.env.STATUS === 'true' : false,  // enable/disable status feature
   DEPLOY_DATE: process.env.DEPLOY_DATE || "2025-05-25",                         // deployment date (YYYY-MM-DD)
-  TARGET_NUMBER: process.env.TARGET_NUMBER || "254752818245 "                    // target phone number for status messages
+  TARGET_NUMBER: process.env.TARGET_NUMBER || "254752818245"                    // target phone number for status messages
 };
 
 module.exports = config;
