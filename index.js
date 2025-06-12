@@ -8,6 +8,7 @@ import {
     DisconnectReason,
     useMultiFileAuthState,
 } from '@whiskeysockets/baileys';
+
 import { Handler, Callupdate, GroupUpdate } from './data/index.js';
 import express from 'express';
 import pino from 'pino';
@@ -20,6 +21,7 @@ import moment from 'moment-timezone';
 import axios from 'axios';
 import config from './config.cjs';
 import pkg from './lib/autoreact.cjs';
+
 const { emojis, doReact } = pkg;
 const prefix = process.env.PREFIX || config.PREFIX;
 const sessionName = "session";
@@ -68,7 +70,6 @@ async function downloadSessionData() {
     try {
         console.log("🔄 Downloading Session...");
         const file = File.fromURL(`https://mega.nz/file/${fileID}#${decryptKey}`);
-
         const data = await new Promise((resolve, reject) => {
             file.download((err, data) => {
                 if (err) reject(err);
@@ -90,7 +91,7 @@ async function start() {
         const { state, saveCreds } = await useMultiFileAuthState(sessionDir);
         const { version, isLatest } = await fetchLatestBaileysVersion();
         console.log(`🤖 PEACE-MD using WA v${version.join('.')}, isLatest: ${isLatest}`);
-        
+
         const Matrix = makeWASocket({
             version,
             logger: pino({ level: 'silent' }),
@@ -98,115 +99,88 @@ async function start() {
             browser: ["PEACE-MD", "safari", "3.3"],
             auth: state,
             getMessage: async (key) => {
-                if (store) {
-                    const msg = await store.loadMessage(key.remoteJid, key.id);
-                    return msg.message || undefined;
-                }
                 return { conversation: " cloid ai whatsapp user bot" };
             }
         });
 
-Matrix.ev.on('connection.update', (update) => {
-    const { connection, lastDisconnect } = update;
-    if (connection === 'close') {
-        if (lastDisconnect.error?.output?.statusCode !== DisconnectReason.loggedOut) {
-            start();
-        }
-    } else if (connection === 'open') {
-        if (initialConnection) {
-            console.log(chalk.green("Connected Successfully PEACE-MD 🤍"));
-            Matrix.sendMessage(Matrix.user.id, { 
-                image: { url: "https://files.catbox.moe/n0dgjr.jpg" }, 
-                caption: `*✨ Hello, 𝐏ᴇᴀᴄᴇ 𝐌ᴅ User! ✨*
+        Matrix.ev.on('connection.update', (update) => {
+            const { connection, lastDisconnect } = update;
+            if (connection === 'close') {
+                if (lastDisconnect?.error?.output?.statusCode !== DisconnectReason.loggedOut) {
+                    start();
+                }
+            } else if (connection === 'open') {
+                if (initialConnection) {
+                    console.log(chalk.green("Connected Successfully PEACE-MD 🤍"));
+                    Matrix.sendMessage(Matrix.user.id, {
+                        image: { url: "https://files.catbox.moe/n0dgjr.jpg" },
+                        caption: `*✨ Hello, 𝐏ᴇᴀᴄᴇ 𝐌ᴅ User! ✨*\n\n╭─〔 *🤖 𝐏ᴇᴀᴄᴇ 𝐌ᴅ* 〕\n├─▸ *Ultrasonic Power and Infinite Speed!*\n╰─➤ *Your New WhatsApp Sidekick is Here!*\n\n*❤️𝐓ʜᴀɴᴋ 𝐘ᴏᴜ 𝐅ᴏʀ 𝐂ʜᴏᴏꜱɪɴɢ 𝐏ᴇᴀᴄᴇ 𝐌ᴅ!*\n\n╭──〔 🔗 *Quick Links* 〕\n├─ 📢 *Join Our Channel:*\n│   Click [**Here**](https://whatsapp.com/channel/0029VbA9YD323n3ko5xL7J1e)\n├─ ⭐ *Give Us a Star:*\n│   Star Us [**Here**](Peacemaker-cyber/PEACE-MD)\n╰─🛠️ *Prefix:* \`${prefix}\`\n\n> _© 𝐏ᴏᴡᴇʀᴇᴅ 𝐁ʏ 𝐏ᴇᴀᴄᴇ 𝐌ᴅ_`
+                    });
+                    initialConnection = false;
+                } else {
+                    console.log(chalk.blue("♻️ Connection reestablished after restart."));
+                }
+            }
+        });
 
-╭─〔 *🤖 𝐏ᴇᴀᴄᴇ 𝐌ᴅ* 〕  
-├─▸ *Ultrasonic Power and Infinite Speed!*  
-╰─➤ *Your New WhatsApp Sidekick is Here!*
-
-*❤️𝐓ʜᴀɴᴋ 𝐘ᴏᴜ 𝐅ᴏʀ 𝐂ʜᴏᴏꜱɪɴɢ 𝐏ᴇᴀᴄᴇ 𝐌ᴅ!*
-
-╭──〔 🔗 *Quick Links* 〕  
-├─ 📢 *Join Our Channel:*  
-│   Click [**Here**](https://whatsapp.com/channel/0029VbA9YD323n3ko5xL7J1e) to join!  
-├─ ⭐ *Give Us a Star:*  
-│   Star Us [**Here**](Peacemaker-cyber/PEACE-MD)!  
-╰─🛠️ *Prefix:* \`${prefix}\`
-
-> _© 𝐏ᴏᴡᴇʀᴇᴅ 𝐁ʏ 𝐏ᴇᴀᴄᴇ 𝐌ᴅ_`
-            });
-            initialConnection = false;
-        } else {
-            console.log(chalk.blue("♻️ Connection reestablished after restart."));
-        }
-    }
-});
-        
         Matrix.ev.on('creds.update', saveCreds);
 
-        Matrix.ev.on("messages.upsert", async chatUpdate => await Handler(chatUpdate, Matrix, logger));
         Matrix.ev.on("call", async (json) => await Callupdate(json, Matrix));
         Matrix.ev.on("group-participants.update", async (messag) => await GroupUpdate(Matrix, messag));
 
-        if (config.MODE === "public") {
-            Matrix.public = true;
-        } else if (config.MODE === "private") {
-            Matrix.public = false;
-        }
+        // Set public/private mode
+        Matrix.public = config.MODE === "public";
 
-        Matrix.ev.on('messages.upsert', async (chatUpdate) => {
+        // Unified messages.upsert
+        Matrix.ev.on("messages.upsert", async (chatUpdate) => {
             try {
-                const mek = chatUpdate.messages[0];
-                console.log(mek);
+                const mek = chatUpdate.messages?.[0];
+                if (!mek || !mek.message) return;
+
+                const fromJid = mek.key.participant || mek.key.remoteJid;
+
+                // Main command handler
+                await Handler(chatUpdate, Matrix, logger);
+
+                // Auto React
                 if (!mek.key.fromMe && config.AUTO_REACT) {
-                    console.log(mek);
-                    if (mek.message) {
-                        const randomEmoji = emojis[Math.floor(Math.random() * emojis.length)];
-                        await doReact(randomEmoji, mek, Matrix);
+                    const randomEmoji = emojis[Math.floor(Math.random() * emojis.length)];
+                    await doReact(randomEmoji, mek, Matrix);
+                }
+
+                // Auto Status Seen, React, Reply
+                if (mek.key.remoteJid === 'status@broadcast' && config.AUTO_STATUS_SEEN) {
+                    await Matrix.readMessages([mek.key]);
+
+                    if (config.READ_MESSAGE === 'true') {
+                        console.log(`Marked message from ${mek.key.remoteJid} as read.`);
+                    }
+
+                    if (config.AUTO_STATUS_REACT === "true") {
+                        const jawadlike = await Matrix.decodeJid(Matrix.user.id);
+                        const statusEmojis = ['❤️', '💯', '🔥', '💎', '💗', '🤍', '😎', '🌟'];
+                        const randomEmoji = statusEmojis[Math.floor(Math.random() * statusEmojis.length)];
+                        await Matrix.sendMessage(mek.key.remoteJid, {
+                            react: {
+                                text: randomEmoji,
+                                key: mek.key,
+                            }
+                        }, { statusJidList: [mek.key.participant, jawadlike] });
+                    }
+
+                    if (config.AUTO_STATUS_REPLY) {
+                        const msg = config.STATUS_READ_MSG || '✅ Auto Status Seen Bot By XEON-XMD';
+                        await Matrix.sendMessage(fromJid, { text: msg }, { quoted: mek });
                     }
                 }
+
             } catch (err) {
-                console.error('Error during auto reaction:', err);
+                console.error('❌ Error handling messages.upsert:', err);
             }
         });
-        
-        Matrix.ev.on('messages.upsert', async (chatUpdate) => {
-    try {
-        const mek = chatUpdate.messages[0];
-        const fromJid = mek.key.participant || mek.key.remoteJid;
-        if (!mek || !mek.message) return;
-        if (mek.key.fromMe) return;
-        if (mek.message?.protocolMessage || mek.message?.ephemeralMessage || mek.message?.reactionMessage) return; 
-        if (mek.key && mek.key.remoteJid === 'status@broadcast' && config.AUTO_STATUS_SEEN) {
-            await Matrix.readMessages([mek.key]);     
-              //=============readstatus======= 
-        if (config.READ_MESSAGE === 'true') {
-    await conn.readMessages([mek.key]);  // Mark message as read
-    console.log(`Marked message from ${mek.key.remoteJid} as read.`);
-  }
-        if (mek.key && mek.key.remoteJid === 'status@broadcast' && config.AUTO_STATUS_REACT === "true"){
-               const jawadlike = await conn.decodeJid(conn.user.id);
-               const emojis = ['❤️', '💸', '😇', '🍂', '💥', '💯', '🔥', '💫', '💎', '💗', '🤍', '🖤', '👀', '🙌', '🙆', '🚩', '🥰', '💐', '😎', '🤎', '✅', '🫀', '🧡', '😁', '😄', '🌸', '🕊️', '🌷', '⛅', '🌟', '🗿', '🇵🇰', '💜', '💙', '🌝', '🖤', '🎎', '🎏', '🎐', '⚽', '🧣', '🌿', '⛈️', '🌦️', '🌚', '🌝', '🙈', '🙉', '🦖', '🐤', '🎗️', '🥇', '👾', '🔫', '🐝', '🦋', '🍓', '🍫', '🍭', '🧁', '🧃', '🍿', '🍻', '🎀', '🧸', '👑', '〽️', '😳', '💀', '☠️', '👻', '🔥', '♥️', '👀', '🐼'];
-               const randomEmoji = emojis[Math.floor(Math.random() * emojis.length)];
-    await conn.sendMessage(mek.key.remoteJid, {
-      react: {
-        text: randomEmoji,
-        key: mek.key,
-      } 
-    }, { statusJidList: [mek.key.participant, jawadlike] });
-  }        
-          //=============readstatus=======                         
-            if (config.AUTO_STATUS_REPLY) {
-                const customMessage = config.STATUS_READ_MSG || '✅ Auto Status Seen Bot By XEON-XMD';
-                await Matrix.sendMessage(fromJid, { text: customMessage }, { quoted: mek });
-            }
-        }
-    } catch (err) {
-        console.error('Error handling messages.upsert event:', err);
-    }
-});
 
     } catch (error) {
-        console.error('Critical Error:', error);
+        console.error('❌ Critical Error:', error);
         process.exit(1);
     }
 }
@@ -221,7 +195,7 @@ async function init() {
             console.log("🔒 Session downloaded, starting bot.");
             await start();
         } else {
-            console.log("No session found or downloaded, QR code will be printed for authentication.");
+            console.log("⚠️ No session found or downloaded, QR code will be printed for authentication.");
             useQR = true;
             await start();
         }
@@ -235,6 +209,5 @@ app.get('/', (req, res) => {
 });
 
 app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
+    console.log(`🌐 Server is running on port ${PORT}`);
 });
-
