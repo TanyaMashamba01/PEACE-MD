@@ -59,7 +59,7 @@ const setProfilePicture = async (m, sock) => {
 │ ✅ *Profile Picture set successfully!*
 │ 🛡️ *Bot:* ${botNumber.split("@")[0]}
 │
-└─➤ *ᴘᴏᴡᴇʀᴇᴅ ʙʏ 𝙋𝙀𝘼𝘾𝙀 𝙈𝘿*
+└─➤ *ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴘᴇᴀᴄᴇ ᴍᴅ*
         `.trim(),
         contextInfo: {
           mentionedJid: [m.sender],
