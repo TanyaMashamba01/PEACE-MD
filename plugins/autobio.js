@@ -34,7 +34,7 @@ import config from '../../config.cjs';
 
      const updateBio = async () => {
        try {
-         const kenyaTime = moment().tz('Africa/Dodoma').format('HH:mm:ss');
+         const kenyaTime = moment().tz('Africa/Nairobi').format('HH:mm:ss');
          const randomIndex = Math.floor(Math.random() * lifeQuotes.length);
          const randomQuote = lifeQuotes[randomIndex];
          const newBio = `✨📸 𝐏ᴇᴀᴄᴇ 𝐌ᴅ 𝐈𝐬 ✨ 𝐀ᴄᴛɪᴠᴇ ✨ 🟢 | 🕰️ Kenya Time: ${kenyaTime} 🇰🇪 | 💬 "${randomQuote}" 📜`;
