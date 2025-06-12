@@ -47,7 +47,7 @@ const menu = async (m, sock) => {
 ⌬ ${prefix}report
 ⌬ ${prefix}chatbot
 ⌬ ${prefix}gpt
-⌬ ${prefix}popkid
+⌬ ${prefix}peacemaker
 ╰─⊲⋅══════════⋅⊳❍
 
 ╭─⊳⋅📦 ᴄᴏɴᴠᴇʀᴛᴇʀ ᴍᴇɴᴜ 📦⋅⊲❍
