@@ -32,7 +32,7 @@ const tiktokdl = async (m, sock) => {
                       `❤️ **Likes:** ${like}\n` +
                       `💬 **Comments:** ${comment}\n` +
                       `🔗 **Share:** ${share}\n\n` +
-                      `ᴘᴏᴡᴇʀᴇᴅ ʙʏ PEACE-MD! 😉`;
+                      `ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴘᴇᴀᴄᴇ ᴍᴅ! 😉`;
 
       await sock.sendMessage(m.from, {
         video: { url: videoUrl },
