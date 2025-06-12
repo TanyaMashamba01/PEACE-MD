@@ -139,7 +139,7 @@ const alive = async (_0x269ba2, _0x329643) => {
       serverMessageId: -1
     };
     const _0x2b4656 = {
-      title: "ꜱʜᴀᴅᴏᴡ-xᴛᴇᴄʜ",
+      title: "𝐏ᴇᴀᴄᴇ 𝐌ᴅ",
       body: "ρяєηιυм υѕєя ¢σммαη∂ѕ",
       thumbnailUrl: "https://files.catbox.moe/n0dgjr.jpg",
       sourceUrl: "https://whatsapp.com/channel/0029VbA9YD323n3ko5xL7J1e",
