@@ -1,6 +1,6 @@
-name: BERA-TECH 
+name: PEACEMAKER-CYBER 
 services:
-  - name: BERA-TECH-SERVICE
+  - name: PEACEMAKER-CYBER-SERVICE
     type: web
     ports:
       - 5000
