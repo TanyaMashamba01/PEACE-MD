@@ -29,7 +29,7 @@ const surahCmd = async (m, gss) => {
 
       const { title_en, title_ar, verses, place, type } = data.surah_details;
       const audioUrl = data.audio_ar;
-      const caption = `📖 *${title_en}* (${title_ar})\n🕌 *Place:* ${place}\n📜 *Type:* ${type}\n🔢 *Verses:* ${verses}\n\n🚀 *ᴘᴏᴡᴇʀᴇᴅ ʙʏ ʙʟᴀᴄᴋ-ᴛᴀᴘᴘʏ*`;
+      const caption = `📖 *${title_en}* (${title_ar})\n🕌 *Place:* ${place}\n📜 *Type:* ${type}\n🔢 *Verses:* ${verses}\n\n🚀 *ᴘᴏᴡᴇʀᴇᴅ ʙʏ ❁ ════ ❃• ᴘᴇᴀᴄᴇᴍᴀᴋᴇʀ •❃ ═ *`;
 
       await gss.sendMessage(m.from, {
         audio: { url: audioUrl },
@@ -39,15 +39,15 @@ const surahCmd = async (m, gss) => {
           isForwarded: true,
           forwardingScore: 999,
           forwardedNewsletterMessageInfo: {
-            newsletterJid: "120363369453603973@newsletter",
-            newsletterName: "xᴇᴏɴ xᴛᴇᴄʜ",
+            newsletterJid: "120363421564278292@newsletter",
+            newsletterName: "𝐏ᴇᴀᴄᴇ 𝐌ᴅ",
             serverMessageId: -1,
           },
           externalAdReply: {
-            title: "xᴇᴏɴ xᴛᴇᴄʜ",
+            title: "𝐏ᴇᴀᴄᴇ 𝐌ᴅ",
             body: "Listen to Surah Audio",
-            thumbnailUrl: "https://files.catbox.moe/og4tsk.jpg",
-            sourceUrl: "https://whatsapp.com/channel/0029VasHgfG4tRrwjAUyTs10",
+            thumbnailUrl: "https://files.catbox.moe/n0dgjr.jpg",
+            sourceUrl: "https://whatsapp.com/channel/0029VbA9YD323n3ko5xL7J1e",
             mediaType: 1,
             renderLargerThumbnail: true,
           },
@@ -71,7 +71,7 @@ const surahCmd = async (m, gss) => {
 
       const { title_en, title_ar, verses } = data.surah_details;
       const chapterText = data.data.chapter.map(v => `📖 *آیت ${v.verse}:* ${v.text}`).join("\n\n");
-      const messageText = `📖 *${title_en}* (${title_ar})\n🔢 *Verses:* ${verses}\n\n${chapterText}\n\n🚀 *ᴘᴏᴡᴇʀᴇᴅ ʙʏ ʙʟᴀᴄᴋ-ᴛᴀᴘᴘʏ*`;
+      const messageText = `📖 *${title_en}* (${title_ar})\n🔢 *Verses:* ${verses}\n\n${chapterText}\n\n🚀 *ᴘᴏᴡᴇʀᴇᴅ ʙʏ ❁ ════ ❃• ᴘᴇᴀᴄᴇᴍᴀᴋᴇʀ •❃ ═ *`;
 
       await gss.sendMessage(m.from, {
         text: messageText,
@@ -79,15 +79,15 @@ const surahCmd = async (m, gss) => {
           isForwarded: true,
           forwardingScore: 999,
           forwardedNewsletterMessageInfo: {
-            newsletterJid: "120363369453603973@newsletter",
-            newsletterName: "xᴇᴏɴ xᴛᴇᴄʜ",
+            newsletterJid: "120363421564278292@newsletter",
+            newsletterName: "𝐏ᴇᴀᴄᴇ 𝐌ᴅ",
             serverMessageId: -1,
           },
           externalAdReply: {
-            title: "xᴇᴏɴ xᴛᴇᴄʜ",
+            title: "𝐏ᴇᴀᴄᴇ 𝐌ᴅ",
             body: "Read Surah with Urdu Translation",
-            thumbnailUrl: "https://files.catbox.moe/og4tsk.jpg",
-            sourceUrl: "https://whatsapp.com/channel/0029VasHgfG4tRrwjAUyTs10",
+            thumbnailUrl: "https://files.catbox.moe/n0dgjr.jpg",
+            sourceUrl: "https://whatsapp.com/channel/0029VbA9YD323n3ko5xL7J1e",
             mediaType: 1,
             renderLargerThumbnail: true,
           },
@@ -110,7 +110,7 @@ const surahCmd = async (m, gss) => {
 
       if (!data || !data.name) throw new Error("Invalid API response");
 
-      const messageText = `💫 *Asma Ul Husna* 💫\n\n✨ *Allah's Name:* ${data.name}\n\n🚀 *ᴘᴏᴡᴇʀᴇᴅ ʙʏ ʙʟᴀᴄᴋ-ᴛᴀᴘᴘʏ*`;
+      const messageText = `💫 *Asma Ul Husna* 💫\n\n✨ *Allah's Name:* ${data.name}\n\n🚀 *ᴘᴏᴡᴇʀᴇᴅ ʙʏ ❁ ════ ❃• ᴘᴇᴀᴄᴇᴍᴀᴋᴇʀ •❃ ═ *`;
 
       await gss.sendMessage(m.from, {
         text: messageText,
@@ -118,15 +118,15 @@ const surahCmd = async (m, gss) => {
           isForwarded: true,
           forwardingScore: 999,
           forwardedNewsletterMessageInfo: {
-            newsletterJid: "120363369453603973@newsletter",
-            newsletterName: "xᴇᴏɴ xᴛᴇᴄʜ",
+            newsletterJid: "120363421564278292@newsletter",
+            newsletterName: "𝐏ᴇᴀᴄᴇ 𝐌ᴅ",
             serverMessageId: -1,
           },
           externalAdReply: {
-            title: "xᴇᴏɴ xᴛᴇᴄʜ",
+            title: "𝐏ᴇᴀᴄᴇ 𝐌ᴅ",
             body: "Get Random Asma Ul Husna",
-            thumbnailUrl: "https://avatars.githubusercontent.com/u/162905644?v=4",
-            sourceUrl: "https://whatsapp.com/channel/0029VasHgfG4tRrwjAUyTs10",
+            thumbnailUrl: "https://files.catbox.moe/n0dgjr.jpg",
+            sourceUrl: "https://whatsapp.com/channel/0029VbA9YD323n3ko5xL7J1e",
             mediaType: 1,
             renderLargerThumbnail: true,
           },
@@ -149,7 +149,7 @@ const surahCmd = async (m, gss) => {
 
       if (!data || !data.name) throw new Error("Invalid API response");
 
-      const messageText = `🌟 *Prophet's Name* 🌟\n\n📜 *Name:* ${data.name}\n\n🚀 *ᴘᴏᴡᴇʀᴇᴅ ʙʏ ʙʟᴀᴄᴋ-ᴛᴀᴘᴘʏ*`;
+      const messageText = `🌟 *Prophet's Name* 🌟\n\n📜 *Name:* ${data.name}\n\n🚀 *ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴘᴇᴀᴄᴇ ᴍᴅ*`;
 
     await gss.sendMessage(m.from, {
       text: messageText,
@@ -157,15 +157,15 @@ const surahCmd = async (m, gss) => {
         isForwarded: true,
         forwardingScore: 999,
         forwardedNewsletterMessageInfo: {
-          newsletterJid: "120363369453603973@newsletter",
-          newsletterName: "xᴇᴏɴ xᴛᴇᴄʜ",
+          newsletterJid: "120363421564278292@newsletter",
+          newsletterName: "𝐏ᴇᴀᴄᴇ 𝐌ᴅ",
           serverMessageId: -1,
         },
         externalAdReply: {
-          title: "ᴊᴏᴇʟ xᴍᴅ sᴜʀᴀʜ ᴍᴇɴᴜ",
+          title: "ᴘᴇᴀᴄᴇ ᴍᴅ Sᴜʀᴀʜ ᴍᴇɴᴜ",
           body: "Get Surah Details",
-          thumbnailUrl: "https://files.catbox.moe/og4tsk.jpg",
-          sourceUrl: "https://whatsapp.com/channel/0029VasHgfG4tRrwjAUyTs10",
+          thumbnailUrl: "https://files.catbox.moe/n0dgjr.jpg",
+          sourceUrl: "https://whatsapp.com/channel/0029VbA9YD323n3ko5xL7J1e",
           mediaType: 1,
           renderLargerThumbnail: true,
         },
