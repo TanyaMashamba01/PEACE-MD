@@ -24,7 +24,7 @@ const repo = async (m, sock) => {
 │🚀 *Explore the Innovation Hub!*
 │
 │ 📦 *Repository*: ${repoUrl}   
-│ 👑 *Owner*: 𝗣𝗘𝗔𝗖𝗘𝗠𝗔𝗞𝗘𝗥
+│ 👑 *Owner*: ❁ ════ ❃• ᴘᴇᴀᴄᴇᴍᴀᴋᴇʀ •❃ ═ 
 │ ⭐ *Stars*: \`${data.stargazers_count}\` 
 │ ⑂ *Forks*: \`${data.forks_count}\`  
 │ 🔗 *URL*: https://whatsapp.com/channel/0029VbA9YD323n3ko5xL7J1e
@@ -34,7 +34,7 @@ const repo = async (m, sock) => {
 │   Contribute & Shape the Future!  
 │
 ╰────────────────⳹
-> Powered  by 𝙋𝙀𝘼𝘾𝙀 𝙈𝘿 💚
+> ᴘᴇᴀᴄᴇ ᴍᴅ ᴘᴏᴡᴇʀᴇᴅ ʙʏ ❁ ════ ❃• ᴘᴇᴀᴄᴇᴍᴀᴋᴇʀ •❃ ═ 💚
 `.trim(),
         };
 
