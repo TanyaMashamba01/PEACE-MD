@@ -1,16 +1,16 @@
 {
-  "name": " PEACE MD ʙᴏᴛ",
+  "name": " ᴘᴇᴀᴄᴇ ᴍᴅ ʙᴏᴛ",
   "version": "10.8.1",
-  "description": "Peacemaker tech inc",
+  "description": "Peace MD tech inc",
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "pm2 start index.js --deep-monitoring --attach --name  PEACE MD ʙᴏᴛ",
-    "stop": "pm2 stop  PEACE MD ʙᴏᴛ",
-    "restart": "pm2 restart  PEACE MD ʙᴏᴛ"
+    "start": "pm2 start index.js --deep-monitoring --attach --name  ᴘᴇᴀᴄᴇ ᴍᴅ ʙᴏᴛ",
+    "stop": "pm2 stop  ᴘᴇᴀᴄᴇ ᴍᴅ ʙᴏᴛ",
+    "restart": "pm2 restart  ᴘᴇᴀᴄᴇ ᴍᴅ ʙᴏᴛ"
   },
   "keywords": ["black-tappy", "whatsapp-bot", "whatsapp md bot"],
-  "author": " Peacemaker",
+  "author": " ᴘᴇᴀᴄᴇ ᴍᴅ",
   "license": "ISC",
   "dependencies": {
     "@whiskeysockets/baileys": "npm:@fizzxydev/baileys-pro@8.5.12",
