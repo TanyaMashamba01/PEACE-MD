@@ -1,3 +1,4 @@
+// All your imports remain unchanged
 import dotenv from 'dotenv';
 dotenv.config();
 
@@ -13,7 +14,6 @@ import { Handler, Callupdate, GroupUpdate } from './data/index.js';
 import express from 'express';
 import pino from 'pino';
 import fs from 'fs';
-import { File } from 'megajs';
 import NodeCache from 'node-cache';
 import path from 'path';
 import chalk from 'chalk';
@@ -21,9 +21,11 @@ import moment from 'moment-timezone';
 import axios from 'axios';
 import config from './config.cjs';
 import pkg from './lib/autoreact.cjs';
+import { File } from 'megajs';
+import { fileURLToPath } from 'url';
 
 const { emojis, doReact } = pkg;
-const prefix = process.env.PREFIX || config.PREFIX;
+
 const sessionName = "session";
 const app = express();
 const orange = chalk.bold.hex("#FFA500");
@@ -40,7 +42,7 @@ logger.level = "trace";
 
 const msgRetryCounterCache = new NodeCache();
 
-const __filename = new URL(import.meta.url).pathname;
+const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const sessionDir = path.join(__dirname, 'session');
@@ -51,7 +53,7 @@ if (!fs.existsSync(sessionDir)) {
 }
 
 async function downloadSessionData() {
-    console.log("Debugging SESSION_ID:", config.SESSION_ID);
+    console.log("🛠️ Debugging SESSION_ID:", config.SESSION_ID);
 
     if (!config.SESSION_ID) {
         console.error('❌ Please add your session to SESSION_ID env !!');
@@ -70,6 +72,7 @@ async function downloadSessionData() {
     try {
         console.log("🔄 Downloading Session...");
         const file = File.fromURL(`https://mega.nz/file/${fileID}#${decryptKey}`);
+
         const data = await new Promise((resolve, reject) => {
             file.download((err, data) => {
                 if (err) reject(err);
@@ -86,24 +89,39 @@ async function downloadSessionData() {
     }
 }
 
+async function updateLiveBio(Matrix) {
+    try {
+        const now = moment().tz('Africa/Nairobi');
+        const time = now.format('HH:mm:ss');
+        const bio = `🧋ᴘᴏᴘᴋɪᴅ xᴍᴅ ɪs ᴀᴄᴛɪᴠᴇ🧋ᴀᴛ ${time}`;
+        await Matrix.updateProfileStatus(bio);
+    } catch (error) {
+        console.error(chalk.red('Failed to update live bio:'), error);
+    }
+}
+
 async function start() {
     try {
         const { state, saveCreds } = await useMultiFileAuthState(sessionDir);
         const { version, isLatest } = await fetchLatestBaileysVersion();
-        console.log(`🤖 PEACE-MD using WA v${version.join('.')}, isLatest: ${isLatest}`);
+        console.log(`POPKID md using WA v${version.join('.')}, isLatest: ${isLatest}`);
 
         const Matrix = makeWASocket({
             version,
             logger: pino({ level: 'silent' }),
             printQRInTerminal: useQR,
-            browser: ["PEACE-MD", "safari", "3.3"],
+            browser: ["popkid", "safari", "3.3"],
             auth: state,
             getMessage: async (key) => {
-                return { conversation: " cloid ai whatsapp user bot" };
+                if (store) {
+                    const msg = await store.loadMessage(key.remoteJid, key.id);
+                    return msg.message || undefined;
+                }
+                return { conversation: "peace md whatsapp user bot" };
             }
         });
 
-        Matrix.ev.on('connection.update', (update) => {
+        Matrix.ev.on('connection.update', async (update) => {
             const { connection, lastDisconnect } = update;
             if (connection === 'close') {
                 if (lastDisconnect?.error?.output?.statusCode !== DisconnectReason.loggedOut) {
@@ -111,81 +129,90 @@ async function start() {
                 }
             } else if (connection === 'open') {
                 if (initialConnection) {
-                    console.log(chalk.green("Connected Successfully PEACE-MD 🤍"));
-                    Matrix.sendMessage(Matrix.user.id, {
-                        image: { url: "https://files.catbox.moe/n0dgjr.jpg" },
-                        caption: `*✨ Hello, 𝐏ᴇᴀᴄᴇ 𝐌ᴅ User! ✨*\n\n╭─〔 *🤖 𝐏ᴇᴀᴄᴇ 𝐌ᴅ* 〕\n├─▸ *Ultrasonic Power and Infinite Speed!*\n╰─➤ *Your New WhatsApp Sidekick is Here!*\n\n*❤️𝐓ʜᴀɴᴋ 𝐘ᴏᴜ 𝐅ᴏʀ 𝐂ʜᴏᴏꜱɪɴɢ 𝐏ᴇᴀᴄᴇ 𝐌ᴅ!*\n\n╭──〔 🔗 *Quick Links* 〕\n├─ 📢 *Join Our Channel:*\n│   Click [**Here**](https://whatsapp.com/channel/0029VbA9YD323n3ko5xL7J1e)\n├─ ⭐ *Give Us a Star:*\n│   Star Us [**Here**](Peacemaker-cyber/PEACE-MD)\n╰─🛠️ *Prefix:* \`${prefix}\`\n\n> _© 𝐏ᴏᴡᴇʀᴇᴅ 𝐁ʏ 𝐏ᴇᴀᴄᴇ 𝐌ᴅ_`
+                    console.log(chalk.green("✔️  ᴘᴏᴘᴋɪᴅ ᴍᴅ ɪs ɴᴏᴡ ᴏɴʟɪɴᴇ ᴀɴᴅ ᴘᴏᴡᴇʀᴇᴅ ᴜᴘ"));
+
+                    const image = { url: "https://files.catbox.moe/nk71o3.jpg" };
+                    const caption = `╭━━ *『 ᴘᴏᴘᴋɪᴅ xᴍᴅ ᴄᴏɴɴᴇᴄᴛᴇᴅ 』*
+┃
+┃  |⚡| *ʙᴏᴛ ɴᴀᴍᴇ:* ᴘᴏᴘᴋɪᴅ xᴍᴅ
+┃  |👑| *ᴏᴡɴᴇʀ:* ᴘᴏᴘᴋɪᴅ
+┃  |⚙️| *ᴍᴏᴅᴇ:* ${config.MODE}
+┃  |🎯| *ᴘʀᴇꜰɪx:* ${config.PREFIX}
+┃  |✅| *ꜱᴛᴀᴛᴜꜱ:* ᴏɴʟɪɴᴇ & ꜱᴛᴀʙʟᴇ
+┃
+╰━━━━━━━━━━━━━━━━━━━╯
+
+*ɪᴛs ʏᴏᴜ,ᴍᴇ,ᴜs🧋🩷.*
+
+╭──────────────────
+│ *ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴘᴏᴘᴋɪᴅ*
+╰──────────────────`;
+
+                    await Matrix.sendMessage(Matrix.user.id, {
+                        image,
+                        caption,
+                        contextInfo: {
+                            isForwarded: true,
+                            forwardingScore: 999,
+                            forwardedNewsletterMessageInfo: {
+                                newsletterJid: '120363290715861418@newsletter',
+                                newsletterName: "popkid xmd ʙᴏᴛ",
+                                serverMessageId: -1,
+                            },
+                            externalAdReply: {
+                                title: "ᴘᴏᴘᴋɪᴅ xᴍᴅ ʙᴏᴛ",
+                                body: "ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴘᴏᴘᴋɪᴅ",
+                                thumbnailUrl: 'https://files.catbox.moe/nk71o3.jpg',
+                                sourceUrl: 'https://whatsapp.com/channel/0029VajweHxKQuJP6qnjLM31',
+                                mediaType: 1,
+                                renderLargerThumbnail: false,
+                            },
+                        },
                     });
+
+                    if (!global.isLiveBioRunning) {
+                        global.isLiveBioRunning = true;
+                        setInterval(() => updateLiveBio(Matrix), 10000);
+                    }
+
                     initialConnection = false;
                 } else {
                     console.log(chalk.blue("♻️ Connection reestablished after restart."));
+                    if (!global.isLiveBioRunning) {
+                        global.isLiveBioRunning = true;
+                        setInterval(() => updateLiveBio(Matrix), 10000);
+                    }
                 }
             }
         });
 
         Matrix.ev.on('creds.update', saveCreds);
+        Matrix.ev.on("messages.upsert", async chatUpdate => {
+            await Handler(chatUpdate, Matrix, logger);
+            try {
+                const mek = chatUpdate.messages[0];
+                if (!mek.key.fromMe && config.AUTO_REACT && mek.message) {
+                    const randomEmoji = emojis[Math.floor(Math.random() * emojis.length)];
+                    await doReact(randomEmoji, mek, Matrix);
+                }
+            } catch (err) {
+                console.error('Error during auto reaction:', err);
+            }
+        });
 
         Matrix.ev.on("call", async (json) => await Callupdate(json, Matrix));
         Matrix.ev.on("group-participants.update", async (messag) => await GroupUpdate(Matrix, messag));
 
-        // Set public/private mode
         Matrix.public = config.MODE === "public";
 
-        // Unified messages.upsert
-        Matrix.ev.on("messages.upsert", async (chatUpdate) => {
-            try {
-                const mek = chatUpdate.messages?.[0];
-                if (!mek || !mek.message) return;
-
-                const fromJid = mek.key.participant || mek.key.remoteJid;
-
-                // Main command handler
-                await Handler(chatUpdate, Matrix, logger);
-
-                // Auto React
-                if (!mek.key.fromMe && config.AUTO_REACT) {
-                    const randomEmoji = emojis[Math.floor(Math.random() * emojis.length)];
-                    await doReact(randomEmoji, mek, Matrix);
-                }
-
-                // Auto Status Seen, React, Reply
-                if (mek.key.remoteJid === 'status@broadcast' && config.AUTO_STATUS_SEEN) {
-                    await Matrix.readMessages([mek.key]);
-
-                    if (config.READ_MESSAGE === 'true') {
-                        console.log(`Marked message from ${mek.key.remoteJid} as read.`);
-                    }
-
-                    if (config.AUTO_STATUS_REACT === "true") {
-                        const jawadlike = await Matrix.decodeJid(Matrix.user.id);
-                        const statusEmojis = ['❤️', '💯', '🔥', '💎', '💗', '🤍', '😎', '🌟'];
-                        const randomEmoji = statusEmojis[Math.floor(Math.random() * statusEmojis.length)];
-                        await Matrix.sendMessage(mek.key.remoteJid, {
-                            react: {
-                                text: randomEmoji,
-                                key: mek.key,
-                            }
-                        }, { statusJidList: [mek.key.participant, jawadlike] });
-                    }
-
-                    if (config.AUTO_STATUS_REPLY) {
-                        const msg = config.STATUS_READ_MSG || '✅ Auto Status Seen Bot By XEON-XMD';
-                        await Matrix.sendMessage(fromJid, { text: msg }, { quoted: mek });
-                    }
-                }
-
-            } catch (err) {
-                console.error('❌ Error handling messages.upsert:', err);
-            }
-        });
-
     } catch (error) {
-        console.error('❌ Critical Error:', error);
+        console.error('❌ Critical Error:', error.stack || error);
         process.exit(1);
     }
 }
 
 async function init() {
+    global.isLiveBioRunning = false;
     if (fs.existsSync(credsPath)) {
         console.log("🔒 Session file found, proceeding without QR code.");
         await start();
@@ -195,7 +222,7 @@ async function init() {
             console.log("🔒 Session downloaded, starting bot.");
             await start();
         } else {
-            console.log("⚠️ No session found or downloaded, QR code will be printed for authentication.");
+            console.log("📸 No session found or downloaded, QR code will be printed for authentication.");
             useQR = true;
             await start();
         }
@@ -204,10 +231,11 @@ async function init() {
 
 init();
 
+// Serve static files
+app.use(express.static(path.join(__dirname, 'mydata')));
 app.get('/', (req, res) => {
-    res.send('Hello World!');
+    res.sendFile(path.join(__dirname, 'mydata', 'index.html'));
 });
-
 app.listen(PORT, () => {
     console.log(`🌐 Server is running on port ${PORT}`);
 });
