@@ -114,31 +114,25 @@ Matrix.ev.on('connection.update', (update) => {
         }
     } else if (connection === 'open') {
         if (initialConnection) {
-            console.log(chalk.green("Connected Successfully PEACE MD 🤍"));
+            console.log(chalk.green("Connected Successfully PEACE-MD 🤍"));
             Matrix.sendMessage(Matrix.user.id, { 
                 image: { url: "https://files.catbox.moe/n0dgjr.jpg" }, 
-                caption: `> 𝐆ᴇᴛ 𝐑ɪɢʜᴛ 𝐖ɪᴛᴄʜ𝐀 🩷🎀 .
-╭───❍「 *𝐂ᴏɴɴᴇᴄᴛᴇ𝐃* 」
-┃ 💚 𝙋𝙀𝘼𝘾𝙀 𝙈𝘿 𝐁ᴏᴛ
-╰───────────❍
-╭───❍「 *𝐁ᴏᴛ 𝐑ᴇᴘᴏ* 」
-┃ [**Here**](https://github.com/Peacemaker-cyber/PEACE-MD) star repo!
-╰───────────❍
-╭───❍「 *𝐉ᴏɪɴ 𝐂ʜᴀɴɴᴇ𝐋* 」
-┃ [**Here**](https://whatsapp.com/channel/0029VbA9YD323n3ko5xL7J1e) to join!
-╰───────────❍
-╭───❍「 *𝐁ᴏᴛ 𝐎ᴡɴᴇ𝐑* 」
-┃ +254752818245 
-╰───────────❍
-╭───❍「 *𝐒ʏꜱᴛᴇᴍ 𝐒ᴛᴀᴛᴜꜱ* 」
-┃ ░░░░░░░░░░░░░░░░░░░ 100%
-╰───────────❍
-╭───❍「 *𝐁ᴏᴛ 𝐏ʀᴇꜰɪ𝐱* 」
-┃ 𝐂ᴏɴꜰɪɢᴜʀ𝐄 𝐘ᴏᴜʀ 𝐏ʀᴇꜰɪ𝐗 ${prefix}
-╰───────────❍
-╭───❍「 *𝐀ᴜᴛᴏᴍᴀᴛɪᴏ𝐍* 」
-┃𝐏ᴏᴡᴇʀᴇᴅ 𝐁ʏ 𝗣𝗘𝗔𝗖𝗘𝗠𝗔𝗞𝗘𝗥
-╰───────────❍`
+                caption: `*✨ Hello, 𝐏ᴇᴀᴄᴇ 𝐌ᴅ User! ✨*
+
+╭─〔 *🤖 𝐏ᴇᴀᴄᴇ 𝐌ᴅ* 〕  
+├─▸ *Ultrasonic Power and Infinite Speed!*  
+╰─➤ *Your New WhatsApp Sidekick is Here!*
+
+*❤️𝐓ʜᴀɴᴋ 𝐘ᴏᴜ 𝐅ᴏʀ 𝐂ʜᴏᴏꜱɪɴɢ 𝐏ᴇᴀᴄᴇ 𝐌ᴅ!*
+
+╭──〔 🔗 *Quick Links* 〕  
+├─ 📢 *Join Our Channel:*  
+│   Click [**Here**](https://whatsapp.com/channel/0029VbA9YD323n3ko5xL7J1e) to join!  
+├─ ⭐ *Give Us a Star:*  
+│   Star Us [**Here**](Peacemaker-cyber/PEACE-MD)!  
+╰─🛠️ *Prefix:* \`${prefix}\`
+
+> _© 𝐏ᴏᴡᴇʀᴇᴅ 𝐁ʏ 𝐏ᴇᴀᴄᴇ 𝐌ᴅ_`
             });
             initialConnection = false;
         } else {
@@ -202,7 +196,7 @@ Matrix.ev.on('connection.update', (update) => {
   }        
           //=============readstatus=======                         
             if (config.AUTO_STATUS_REPLY) {
-                const customMessage = config.STATUS_READ_MSG || '✅ Auto Status Seen Bot By PEACE-MD';
+                const customMessage = config.STATUS_READ_MSG || '✅ Auto Status Seen Bot By XEON-XMD';
                 await Matrix.sendMessage(fromJid, { text: customMessage }, { quoted: mek });
             }
         }
@@ -243,3 +237,4 @@ app.get('/', (req, res) => {
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 });
+
