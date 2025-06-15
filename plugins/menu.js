@@ -12,12 +12,12 @@ const menu = async (m, sock) => {
     const responseTime = (end - start) / 1000;
 
     // Always use the constant background image
-    const profilePictureUrl = 'https://files.catbox.moe/n0dgjr.jpg';
+    const profilePictureUrl = 'https://b.top4top.io/p_3291qwfqu0.jpg';
 
     const menuText = `
-╭───❍「 *😇𝐏ᴇᴀᴄᴇ 𝐌ᴅ😇* 」
+╭───❍「 *🇿🇼『ᴶᴼˢᴴᵁᴬᴹᴬᴹᴮᴼ1』❤️‍🔥* 」
 │ *🏷️Version*: 7.1.0 |
-│ *👑Developed By PEACE-MD*
+│ *👑Developed By Halsted Builders Express*
 │ *🎲Ultrasonic Power and Speed⚡
 ╰───────────❍
 > Explore the Bot command 🪄 for ultimate magic ✨ 
@@ -72,7 +72,7 @@ const menu = async (m, sock) => {
 ⌬ ${prefix}url
 ⌬ ${prefix}roast
 ╰─⊲⋅══════════⋅⊳❍
-📢 *Dᴇᴠ 𝐏ᴇᴀᴄᴇ 𝐌ᴅ*
+📢 *Follow and Subscribe to https://youtube.com/@joshuamambo1*
 `;
 
     await sock.sendMessage(m.from, {
@@ -82,8 +82,8 @@ const menu = async (m, sock) => {
         forwardingScore: 5,
         isForwarded: true,
         forwardedNewsletterMessageInfo: {
-          newsletterName: "𝐏ᴇᴀᴄᴇ 𝐌ᴅ",
-          newsletterJid: "120363421564278292@newsletter",
+          newsletterName: "Joshuamambo1 NetKing from Gweru",
+          newsletterJid: "120363347365643318@newsletter",
         },
       }
     }, { quoted: m });
