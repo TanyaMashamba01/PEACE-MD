@@ -8,7 +8,7 @@ const repo = async (m, sock) => {
   if (cmd === "repo") {
     await m.React('🖇️'); // A gem for a precious repo!
     const repoUrl = 'https://github.com/Peacemaker-cyber/PEACE-MD';
-    const imageUrl = 'https://files.catbox.moe/n0dgjr.jpg'; // ❗ REPLACE WITH YOUR ACTUAL IMAGE URL
+    const imageUrl = 'https://I.postimg.cc/4NdSqms8/MidKing.jpg'; // ❗ REPLACE WITH YOUR ACTUAL IMAGE URL
 
     try {
       const apiUrl = `https://api.github.com/repos/Peacemaker-cyber/PEACE-MD`;
@@ -19,22 +19,22 @@ const repo = async (m, sock) => {
         const stylishMessage = {
           image: { url: imageUrl },
           caption: `
-╭───『 PEACE-MD REPO 』───⳹
+╭───『 『ᴶᴼˢᴴᵁᴬᴹᴬᴹᴮᴼ1』 REPO 』───⳹
 │
 │🚀 *Explore the Innovation Hub!*
 │
-│ 📦 *Repository*: ${repoUrl}   
-│ 👑 *Owner*: ❁ ════ ❃• ᴘᴇᴀᴄᴇᴍᴀᴋᴇʀ •❃ ═ 
+│ 📦 *Repository*: ${https://github.com/mambowepanzvimbo/norepo}   
+│ 👑 *Owner*: 『ᴶᴼˢᴴᵁᴬᴹᴬᴹᴮᴼ1』 
 │ ⭐ *Stars*: \`${data.stargazers_count}\` 
 │ ⑂ *Forks*: \`${data.forks_count}\`  
-│ 🔗 *URL*: https://whatsapp.com/channel/0029VbA9YD323n3ko5xL7J1e
+│ 🔗 *URL*: https://whatsapp.com/channel/0029VaraMtfFcowAKRdDdp1T
 │
 │ 📝 *Description*:
 │ 🤝 *Join the Community!* 
 │   Contribute & Shape the Future!  
 │
 ╰────────────────⳹
-> ᴘᴇᴀᴄᴇ ᴍᴅ ᴘᴏᴡᴇʀᴇᴅ ʙʏ ❁ ════ ❃• ᴘᴇᴀᴄᴇᴍᴀᴋᴇʀ •❃ ═ 💚
+> Follow and Subscribe to https://youtube.com/@joshuamambo1💚
 `.trim(),
         };
 
