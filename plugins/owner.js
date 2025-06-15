@@ -9,7 +9,7 @@ const text = m.body.slice(prefix.length + cmd.length).trim();
     if (cmd === 'owner') {
         try {
             await gss.sendContact(m.from, [ownernumber], m);
-            await m.React("✅");
+            await m.React("🇿🇼❤️‍🔥");
         } catch (error) {
             console.error('Error sending owner contact:', error);
             m.reply('Error sending owner contact.');
