@@ -91,3 +91,19 @@ const menu = async (m, sock) => {
 };
 
 export default menu;
+
+
+    }, { quoted: mek });
+
+    if (sendAudio) {
+      await conn.sendMessage(from, {
+        audio: { url: 'https://files.catbox.moe/sw34lv.mp4' },
+        mimetype: 'audio/mp4',
+        ptt: true
+      }, { quoted: mek });
+    }
+  } catch (e) {
+    console.error(`Menu Error (${title}):`, e);
+    throw e;
+  }
+}
