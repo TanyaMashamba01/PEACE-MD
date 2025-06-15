@@ -80,7 +80,7 @@ const text = m.body.slice(prefix.length + cmd.length).trim();
             },
             interactiveMessage: proto.Message.InteractiveMessage.create({
               body: proto.Message.InteractiveMessage.Body.create({
-                text: `*XEON-XTECH FACEBOOK POST DOWNLOADER*\n\n> *TITLE*: ${fbData.title}`
+                text: `*『ᴶᴼˢᴴᵁᴬᴹᴬᴹᴮᴼ1』 FACEBOOK POST DOWNLOADER*\n\n> *TITLE*: ${fbData.title}`
               }),
               footer: proto.Message.InteractiveMessage.Footer.create({
                 text: "© Black-Tappy"
@@ -146,7 +146,7 @@ const text = m.body.slice(prefix.length + cmd.length).trim();
             content = { 
               video: finalMediaBuffer, 
               mimetype: 'video/mp4', 
-              caption: '> © Black-Tappy',
+              caption: '> © Follow and Subscribe to https://youtube.com/@joshuamambo1',
             };
             await Matrix.sendMessage(m.from, content, { quoted: m });
           } else {
