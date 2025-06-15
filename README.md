@@ -14,8 +14,8 @@
 
 <!-- Banner Image -->
 <p align="center">
-  <a href="https://files.catbox.moe/n0dgjr.jpg">
-    <img src="https://files.catbox.moe/n0dgjr.jpg" width="100%" height="auto">
+  <a href="https://I.postimg.cc/4NdSqms8/MidKing.jpg">
+    <img src="https://I.postimg.cc/4NdSqms8/MidKing.jpg" width="100%" height="auto">
   </a>
 </p>
 
@@ -27,7 +27,7 @@
 
 
 
-<a href="https://dashboard.heroku.com/new?template=https://github.com/Peacemaker-cyber/PEACEMD/tree/main">
+<a href="https://dashboard.heroku.com/new?template=https://github.com/TanyaMashamba01/PEACEMD/tree/main">
     <img title="DEPLOY PEACE MD BOT" src="https://img.shields.io/badge/🚀_DEPLOY_ON_HEROKU-000000?style=for-the-badge&logo=heroku&logoColor=white&color=FF00FF" width="260" height="50"/>
   </a>
 </p>
