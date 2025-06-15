@@ -7,7 +7,7 @@ const __filename = new URL(import.meta.url).pathname;
 const __dirname = path.dirname(__filename);
 const chatHistoryFile = path.resolve(__dirname, '../deepseek_history.json');
 
-const deepSeekSystemPrompt = "You are an intelligent AI assistant.";
+const deepSeekSystemPrompt = "You are an intelligent AI assistant made by https://youtube.com/@joshuamambo1.";
 
 async function readChatHistoryFromFile() {
     try {
