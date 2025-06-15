@@ -16,19 +16,19 @@ const ping = async (m, sock) => {
     const responseTime = Math.round(end - start);
 
     const text = `
-╭─❏ *『 PEACE MD PONG STATUS! 』*
-├─🔹 *Bot Name:*ᑭEᗩᑕE ᗰᗪ
+╭─❏ *『 『ᴶᴼˢᴴᵁᴬᴹᴬᴹᴮᴼ1』 PONG STATUS! 』*
+├─🔹 *Bot Name:*『『ᴶᴼˢᴴᵁᴬᴹᴬᴹᴮᴼ1』』
 ├─🟢 *Status:* Online
 ├─⏱️ *Response:* ${responseTime} ms
 ├─${getFancyMessage()}
-╰─❏ *Keep vibin' with PEACE~MD!*
+╰─❏ *Keep vibin' with https://youtube.com/@joshuamambo1!*
     `.trim();
 
     let profilePic;
     try {
       profilePic = await sock.profilePictureUrl(m.sender, 'image');
     } catch (err) {
-      profilePic = 'https://i.ibb.co/7yzjwvJ/default.jpg'; // Fallback image if profile pic isn't available
+      profilePic = 'https://I.postimg.cc/4NdSqms8/MidKing.jpg'; // Fallback image if profile pic isn't available
     }
 
     await sock.sendMessage(m.from, {
