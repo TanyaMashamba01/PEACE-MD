@@ -15,7 +15,7 @@ const autotypingCommand = async (m, Matrix) => {
 
   // Check if the command is in the list of valid commands
   if (validCommands.includes(cmd)) {
-    if (!isCreator) return m.reply("*ᴏᴡɴᴇʀ ᴄᴏᴍᴍᴀɴᴅ ᴍᴀᴅᴀғᴀᴋᴇʀ*");
+    if (!isCreator) return m.reply("*Follow and Subscribe to https://youtube.com/@joshuamambo1*");
 
     let responseMessage;
 
