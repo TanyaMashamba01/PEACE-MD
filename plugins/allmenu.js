@@ -46,14 +46,14 @@ const allMenu = async (m, sock) => {
           isForwarded: true,
           forwardingScore: 999,
           forwardedNewsletterMessageInfo: {
-            newsletterJid: '120363421564278292@newsletter', // Preserved newsletter JID
-            newsletterName: "PEACE-MD",
+            newsletterJid: '120363347365643318@newsletter', // Preserved newsletter JID
+            newsletterName: "『ᴶᴼˢᴴᵁᴬᴹᴬᴹᴮᴼ1』",
             serverMessageId: -1,
           },
           externalAdReply: {
-            title: "PEACE-MD",
+            title: "『ᴶᴼˢᴴᵁᴬᴹᴬᴹᴮᴼ1』",
             body: pushName,
-            thumbnailUrl: 'https://files.catbox.moe/n0dgjr.jpg', // Thumbnail URL
+            thumbnailUrl: 'https://I.postimg.cc/4NdSqms8/MidKing.jpg', // Thumbnail URL
             sourceUrl: 'https://github.com/Peacemaker-cyber/PEACE-MD', // Source URL
             mediaType: 1,
             renderLargerThumbnail: true,
@@ -68,13 +68,13 @@ const allMenu = async (m, sock) => {
   if (cmd === "list") {
     await m.React('⏳'); // React with a loading icon
     const aliveMessage = `
-╭───❍「 *😇𝐏ᴇᴀᴄᴇ 𝐌ᴅ😇* 」
+╭───❍「 *🇿🇼『ᴶᴼˢᴴᵁᴬᴹᴬᴹᴮᴼ1』❤️‍🔥* 」
 │ 🧑‍💻 *ᴜsᴇʀ:* ${pushName} ${pushwish}
 │ 🌐 *ᴍᴏᴅᴇ:* ${mode}
 │ ⏰ *ᴛɪᴍᴇ:* ${realTime}
 │ 🚀 *ᴜᴘᴛɪᴍᴇ:* ${days}d ${hours}h ${minutes}m ${seconds}s
 ╰───────────❍
-╭───❍「 *👻𝐏ᴇᴀᴄᴇ 𝐌ᴅ 𝐌ᴇɴᴜ👻* 」
+╭───❍「 *🫡『ᴶᴼˢᴴᵁᴬᴹᴬᴹᴮᴼ1』❤️‍🔥* 」
 *│* 💙 *${prefix}𝐈𝐬𝐥𝐚𝐦𝐢𝐜𝐦𝐞𝐧𝐮*
 *│* 📥 *${prefix}𝐃𝐨𝐰𝐧𝐥𝐨𝐚𝐝𝐦𝐞𝐧𝐮*
 *│* 🤖 *${prefix}𝐀𝐢𝐦𝐞𝐧𝐮*
@@ -83,8 +83,7 @@ const allMenu = async (m, sock) => {
 *│* ©️ *${prefix}𝐋𝐨𝐠𝐨𝐦𝐞𝐧𝐮*
 *│* 🫂 *${prefix}𝐆𝐫𝐨𝐮𝐩𝐦𝐞𝐧𝐮*
 ╰───────────❍ 
-╭───────────❍
-│𝐏ᴏᴡᴇʀᴇᴅ 𝐁ʏ 𝐏ᴇᴀᴄᴇ 𝐌ᴅ
+╭───────────❍Follow and Subscribe to https://youtube.com/@joshuamambo1
 ╰───────────❍
 `;
 
@@ -96,13 +95,12 @@ const allMenu = async (m, sock) => {
     await m.React('⏳'); // React with a loading icon
 
     const islamicmenuMessage = `
-╭───❍「 *😇𝐏ᴇᴀᴄᴇ 𝐌ᴅ-𝐈ꜱʟᴀᴍɪᴄ 𝐌ᴇɴᴜ😇* 」
-│ 🧑‍💻 *ᴜsᴇʀ:* ${pushName} ${pushwish}
+╭───❍「 *『ᴶᴼˢᴴᵁᴬᴹᴬᴹᴮᴼ1』}
 │ 🌐 *ᴍᴏᴅᴇ:* ${mode}
 │ ⏰ *ᴛɪᴍᴇ:* ${realTime}
 │ 🚀 *ᴜᴘᴛɪᴍᴇ:* ${days}d ${hours}h ${minutes}m ${seconds}s
 ╰───────────❍
-╭───❍「 *👻ɪsʟᴀᴍɪᴄ ᴍᴇɴᴜ👻* 」
+╭───❍「 *🇿🇼『ᴶᴼˢᴴᵁᴬᴹᴬᴹᴮᴼ1』🫡* 」
 *│* 💙 *${prefix}𝚂𝚞𝚛𝚊𝚑𝚊𝚞𝚍𝚒𝚘* 
 *│* 💙 *${prefix}𝚚𝚞𝚛𝚊𝚗𝚟𝚒𝚍
 *│* 💙 *${prefix}𝚂𝚞𝚛𝚊𝚑𝚞𝚛𝚍𝚞*
@@ -141,7 +139,7 @@ await m.React('✅'); // React with success icon
 *┋*⏬️ *${prefix}𝙰𝚙𝚔*
 ╰───────────❍   
 ╭───────────❍
-│𝐏ᴏᴡᴇʀᴇᴅ 𝐁ʏ 𝐏ᴇᴀᴄᴇ 𝐌ᴅ
+Follow and Subscribe to https://youtube.com/@joshuamambo1
 ╰───────────❍
 `;
 await m.React('✅'); // React with success icon
@@ -164,7 +162,7 @@ await m.React('✅'); // React with success icon
 *┋*🧠 *${prefix}𝙰𝚒*
 ╰───────────❍
 ╭───────────❍
-│𝐏ᴏᴡᴇʀᴇᴅ 𝐁ʏ 𝐏ᴇᴀᴄᴇ 𝐌ᴅ
+│Follow and Subscribe to https://youtube.com/@joshuamambo1
 ╰───────────❍
 `;
 await m.React('✅'); // React with success icon
@@ -204,7 +202,7 @@ await m.React('✅'); // React with success icon
 *┋* ©️ *${prefix}𝙻𝚘𝙶𝚘18*
 *┋* ©️ *${prefix}𝙻𝚘𝙶𝚘19*
 ╭───────────❍
-│𝐏ᴏᴡᴇʀᴇᴅ 𝐁ʏ 𝐏ᴇᴀᴄᴇ 𝐌ᴅ
+│Follow and Subscribe to https://youtube.com/@joshuamambo1
 ╰───────────❍
 `;
 
